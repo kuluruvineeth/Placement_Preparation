@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//optimal approach
+//optimal approach : TIME=O(N),SPACE=O(N)
 int maxlen(vector<int> &v, int n)
 {
   int sum = 0, maxi = 0;
@@ -32,6 +32,7 @@ int maxlen(vector<int> &v, int n)
 
 int main()
 {
+
   vector<int> v{15, -2, 2, -8, 1, 7, 10, 23};
   cout << maxlen(v, v.size()) << endl;
   return 0;

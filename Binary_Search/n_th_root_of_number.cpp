@@ -1,5 +1,6 @@
 /* PROBLEM STATEMENT : Given a number find nth root of that number */
 
+//TIME COMPLEXITY = NLOG(M*d)
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -3,6 +3,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/* in order to check for the left half
+1st instance -> even index
+2nd instance -> odd index
+*/
+
+/* in order to check for the right half
+1st instance -> odd index
+2nd instance -> even index
+*/
+
 int singleNonDuplicate(vector<int> &v)
 {
   int low = 0, high = v.size() - 2;

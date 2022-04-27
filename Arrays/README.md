@@ -109,6 +109,7 @@ int main()
 ```
 
 ## 2. [Finding Peak Element in Array](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Arrays/peak_element.cpp)
+```cpp
 /*
 Question : Given an array A of N integers. The task is to find a peak element in A in O( log N ) .
 An array element is peak if it is not smaller than its neighbours. For corner elements, consider only one neighbour.
@@ -167,3 +168,4 @@ int main()
         return 0;
     }
 }
+```

@@ -3,7 +3,7 @@
 <details>
 <summary>Finding Duplicate Number in Array</summary>
 cpp code
-```c++
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 

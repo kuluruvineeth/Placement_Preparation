@@ -972,3 +972,31 @@ int main()
 }
 ```
 
+## 12. [Find element that appears once](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Arrays/find_element_that_appears_once.cpp)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        int a[n];
+        int ans=0;
+        for(int i=0;i<n;i++)
+        {
+            cin>>a[i];
+        }
+        for(int i=0;i<n;i++)
+        {
+            ans = ans^a[i];
+        }
+        cout<<ans<<endl;
+    }
+}
+```
+

@@ -1,6 +1,6 @@
 # List of Standard Array Questions for Interview Preparations
 
-## 1. Finding the Duplicate Element in Array
+## 1. [Finding the Duplicate Element in Array](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Arrays/duplicate_number.cpp)
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;

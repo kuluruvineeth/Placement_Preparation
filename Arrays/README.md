@@ -1,8 +1,6 @@
 # List of Standard Array Questions for Interview Preparations
 
-<details>
-<summary>Finding Duplicate Number in Array</summary>
-cpp code
+## 1. Finding the Duplicate Element in Array
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -109,4 +107,3 @@ int main()
   find_duplicate(v, n);
 }
 ```
-</details>

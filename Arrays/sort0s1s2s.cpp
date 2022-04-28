@@ -110,6 +110,6 @@ int main()
   vector<int> v{0, 1, 2, 1, 2, 0, 1, 2};
   int n = v.size();
   sortnaive(v, n);
-  //sortbetter(v,n);
-  //sortoptimal(v,n);
+  sortbetter(v,n);
+  sortoptimal(v,n);
 }

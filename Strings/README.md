@@ -229,3 +229,136 @@ int main()
     }
 }
 ```
+
+## 4. [Longest Common Substring](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Strings/longest_common_substring.cpp)
+```cpp
+/*
+Given two strings ‘X’ and ‘Y’, find the length of the longest common substring. 
+Input : X = “abcdxyz”, y = “xyzabcd” 
+Output : 4 
+Explanation:
+The longest common substring is “abcd” and is of length 4.
+*/
+#include<bits/stdc++.h>
+using namespace std;
+
+int LCStr(string s1,string s2,int m,int n)
+{
+    int dp[m+1][n+1];
+    int result = 0;
+    for(int i=0;i<=m;i++)
+    {
+        for(int j=0;j<=n;j++)
+        {
+            if(i==0 || j==0)
+            {
+                dp[i][j] = 0;
+            }
+            else if(s1[i-1] == s2[j-1])
+            {
+                dp[i][j] = dp[i-1][j-1] + 1;
+                result = max(result,dp[i][j]);
+            }
+            else
+            {
+                dp[i][j] = 0;
+            }
+        }
+    }
+    return result;
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string s1,s2;
+        int m,n;
+        cin>>m>>n;
+        cin>>s1>>s2;
+        cout<<LCStr(s1,s2,m,n)<<endl;
+    }
+}
+```
+
+## 5. [Longest Common Prefix](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Strings/longest_common_prefix.cpp)
+```cpp
+/*
+Given a set of strings, find the longest common prefix. 
+Examples:
+Input  : {"apple", "ape", "april"}
+Output : "ap"
+*/
+#include<bits/stdc++.h>
+using namespace std;
+
+int minLen(vector<string> v)
+{
+    int len = INT_MAX;
+    for(int i=0;i<v.size();i++)
+    {
+        int strsize = v[i].size();
+        len = min(len,strsize);
+    }
+    return len;
+}
+
+int check(vector<string> v,int mid)
+{
+    for(int i=0;i<v.size();i++)
+    {
+        for(int j=0;j<mid;j++)
+        {
+            if(v[i][j] != v[0][j])
+            {
+                return 0;
+            }
+        }
+    }
+    return 1;
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        vector<string> v;
+        for(int i=0;i<n;i++)
+        {
+            string s;
+            cin>>s;
+            v.push_back(s);
+        }
+        int minlen = minLen(v);
+        int l=1,h=minlen,ans=-1;
+        while(l<=h)
+        {
+            int mid = (l+h)/2;
+            if(check(v,mid))
+            {
+                l = mid+1;
+                ans = mid;
+            }
+            else
+            {
+                h = mid - 1;
+            }
+        }
+        for(int i=0;i<ans;i++)
+        {
+            cout<<v[0][i];
+        }
+        if(ans == -1)
+        {
+            cout<<-1;
+        }
+        cout<<endl;
+    }
+}
+```

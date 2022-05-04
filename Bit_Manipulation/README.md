@@ -195,3 +195,36 @@ int main()
     return 0;
 }
 ```
+
+## 5. [Find pos of set bit](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Bit_Manipulation/find_pos_of_set_bit.cpp)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int findPosition(int n)
+{
+    int count=0,setBit=0;
+    while(n)
+    {
+        count++;
+        if(n&1)
+        {
+            setBit++;
+        }
+        n >>=1;
+    }
+    if(setBit>1 || setBit == 0)
+    {
+        return -1;
+    }
+    return count;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<findPosition(n)<<endl;
+    return 0;
+}
+```

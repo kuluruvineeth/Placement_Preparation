@@ -109,3 +109,42 @@ int main()
     return 0;
 }
 ```
+
+## 3. [Binary Coefficient](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Dynamic_Programming/binary_coefficient.cpp)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+long long nCr(int n,int r)
+{
+    long long int ans = 1;
+    if(n<r)
+    {
+        return 0;
+    }
+
+    if(r > n-r)
+    {
+        r = n-r;
+    }
+    for(int i=0;i<r;i++)
+    {
+        ans *= (n-i);
+        ans /= (i+1);
+    }
+    return ans;
+}
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,r;
+        cin>>n>>r;
+        cout<<nCr(n,r)<<endl;
+    }
+    return 0;
+}
+```

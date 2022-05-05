@@ -125,3 +125,27 @@ int main()
     return 0;
 }
 ```
+
+## 3. [Count squares](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Sorting_and_Searching/count_squares.cpp)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int countSquares(int n)
+{
+    int i=1;
+    while((i*i)<n)
+    {
+        i++;
+    }
+    return i-1;
+}
+
+int main()
+{
+    int n;
+    cin>>n;
+    cout<<countSquares(n)<<endl;
+    return 0;
+}
+```

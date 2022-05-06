@@ -575,3 +575,27 @@ int main()
     return 0;
 }
 ```
+
+## 11. [Is string palindrome](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Strings/is_palindrome.cpp)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int isPalindrome(string s)
+{
+    int len = s.size();
+    for(int i=0;i<len/2;i++)
+    {
+        if(s[i]!=s[len-i-1]) return 0;
+    }
+    return 1;
+}
+
+int main()
+{
+    string s = "abba";
+    if(isPalindrome(s)) cout<<"string is palindrome"<<endl;
+    else cout<<"string is not plaindrome"<<endl;
+    return 0;
+}
+```

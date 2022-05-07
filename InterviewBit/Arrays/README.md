@@ -50,3 +50,70 @@ int main()
     return 0;
 }
 ```
+
+## 2. [Minimum steps in infinite grid](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Interviewbit/Arrays/min_steps_infinite_grid.cpp)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int minSteps(vector<int> &A,vector<int> &B)
+{
+    int steps = 0;
+    for(int i=0;i<A.size()-1;i++)
+    {
+        int x = A[i];
+        int y = B[i];
+        int x1 = A[i+1];
+        int y1 = B[i+1];
+        int x_diff = abs(x-x1);
+        int y_diff = abs(y-y1);
+        steps += max(x_diff,y_diff);
+    }
+    return steps;
+}
+
+int main()
+{
+    vector<int> A={0,1,2};
+    vector<int> B={0,1,2};
+    cout<<minSteps(A,B)<<endl;
+    return 0;
+}
+```
+
+## 3. [Minimum lights to activate](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Interviewbit/Arrays/min_lights_to_activate.cpp)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int solve(vector<int> &A,int B)
+{
+    int count=0;
+    int n=A.size(),i=0;
+    while(i<n)
+    {
+        int left = max(i-B+1,0);
+        int right = min(i+B-1,n-1);
+        bool bulbFound=0;
+        while(right>=left)
+        {
+            if(A[right--]==1)
+            {
+                bulbFound = 1;
+                break;
+            }
+        }
+        if(!bulbFound) return -1;
+        count++;
+        i = right+B-1;
+    }
+    return count;
+}
+
+int main()
+{
+    vector<int> A={0,0,1,1,1,0,0,1};
+    cout<<solve(A,3)<<endl;
+    return 0;
+}
+```

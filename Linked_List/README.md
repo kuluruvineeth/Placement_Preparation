@@ -792,7 +792,7 @@ int main()
 }
 ```
 
-## 11. [Intersection point of two sorted linked list](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Linked_List/intersection_point.cpp)
+## 11. [Intersection point of two linked list](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Linked_List/intersection_point.cpp)
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;

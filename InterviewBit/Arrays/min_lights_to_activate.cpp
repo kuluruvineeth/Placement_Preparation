@@ -20,7 +20,7 @@ int solve(vector<int> &A,int B)
         }
         if(!bulbFound) return -1;
         count++;
-        i = right+B-1;
+        i = right+B;
     }
     return count;
 }

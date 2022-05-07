@@ -105,14 +105,14 @@ int solve(vector<int> &A,int B)
         }
         if(!bulbFound) return -1;
         count++;
-        i = right+B-1;
+        i = right+B;
     }
     return count;
 }
 
 int main()
 {
-    vector<int> A={0,0,1,1,1,0,0,1};
+    vector<int> A={1,1,1,1,1,0,0};
     cout<<solve(A,3)<<endl;
     return 0;
 }

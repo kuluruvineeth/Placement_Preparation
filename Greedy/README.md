@@ -225,3 +225,38 @@ int main()
   return 0;
 }
 ```
+
+## 6. [Buy max stocks if i stocks can be bought on ithday](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Greedy/buy_max_stocks_if_i_stocks_can_be_bought_on_ithday.cpp)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n,k;
+    cin>>n>>k;
+    int a[n];
+    for(int i=0;i<n;i++) cin>>a[i];
+    vector<pair<int,int>> v;
+    for(int i=0;i<n;i++) v.push_back({a[i],i+1});
+    sort(v.begin(),v.end());
+    int ans=0;
+    for(int i=0;i<n;i++)
+    {
+        int price = v[i].first;
+        int stock = v[i].second;
+        if(price*stock<=k)
+        {
+            ans += stock;
+            k -= price*stock;
+        }
+        else
+        {
+            ans += (k/price);
+            k -= price*(k/price);
+        }
+    }
+    cout<<ans<<endl;
+    return 0;
+}
+```

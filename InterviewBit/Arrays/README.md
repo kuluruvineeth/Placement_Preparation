@@ -118,7 +118,7 @@ int main()
 }
 ```
 
-## 14. [Maximum Sum Triplet](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Interviewbit/Arrays/maximum_sum_triplet.cpp)
+## 4. [Maximum Sum Triplet](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Interviewbit/Arrays/maximum_sum_triplet.cpp)
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -155,7 +155,7 @@ int main()
 }
 ```
 
-## 15. [Maximum Sum Contiguous Subarray](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Interviewbit/Arrays/maximum_contiguous_subarray.cpp)
+## 5. [Maximum Sum Contiguous Subarray](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Interviewbit/Arrays/maximum_contiguous_subarray.cpp)
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -181,6 +181,67 @@ int main()
 {
     vector<int> v = {-2,1,-3,4,-1,2,1,-5,4};
     cout<<"Maximum subarray sum is : "<<maxsumSubArray(v)<<endl;
+    return 0;
+}
+```
+
+## 6. [Add one to number](https://github.com/kuluruvineeth/Placement_Preparation/blob/main/Interviewbit/Arrays/maximum_contiguous_subarray.cpp)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> plusOne(vector<int> &v)
+{
+    int i,n=v.size(),count=0;
+    for(int i=0;i<n;i++)
+    {
+        if(v[i]==9)
+        {
+            count++;
+        }
+        else break;
+    }
+    if(count==n)
+    {
+        vector<int> r;
+        r.push_back(1);
+        for(int i=0;i<n;i++)
+        {
+            r.push_back(0);
+        }
+        return r;
+    }
+    else if(v[n-1]==9)
+    {
+        int carry=1;
+        for(i=n-1;i>=0 && carry==1;i--)
+        {
+            if(v[i]==9)
+            {
+                v[i]=0;
+            }
+            else
+            {
+                v[i]++;
+                carry=0;
+            }
+        }
+    }
+    else v[n-1]++;
+    //to remove leading zeros if any
+    reverse(v.begin(),v.end());
+    for(i=n-1;i>=0&&v[i]==0;i--) v.pop_back();
+    reverse(v.begin(),v.end());
+    return v;
+}
+int main()
+{
+    vector<int> v = {1,2,9};
+    vector<int> ans = plusOne(v);
+    for(int i=0;i<ans.size();i++)
+    {
+        cout<<ans[i]<<" ";
+    }
     return 0;
 }
 ```

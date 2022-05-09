@@ -1,5 +1,5 @@
 /* PROBLEM STATEMENT : GFG practice job sequencing problem*/
-
+//Refer Code Library channel
 #include <bits/stdc++.h>
 using namespace std;
 

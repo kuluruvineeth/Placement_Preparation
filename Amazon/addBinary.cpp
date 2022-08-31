@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution{
+    public:
+        string addBinary(string a, string b){
+            int n = max(a.size(),b.size()) + 1;
+
+            //padding
+            a.insert(a.begin(),n-a.size(),'0');
+            b.insert(b.begin(),n-b.size(),'0');
+
+            cout<<a<<endl;
+            cout<<b<<endl;
+
+            //now we can iterate from i=0
+            reverse(a.begin(),a.end());
+            reverse(b.begin(),b.end());
+
+            cout<<a<<endl;
+            cout<<b<<endl;
+
+            int i=0, carry=0;
+            //add b to a
+            for(int i=0;i<n;i++){
+                int ai = a[i]-'0', bi = b[i]-'0';
+                int sumi = ai + bi + carry;
+                switch(sumi){
+                    case 3:
+                        a[i] = '1';
+                        carry = 1;
+                        break;
+                    case 2:
+                        a[i] = '0';
+                        carry = 1;
+                        break;
+                    case 1:
+                        a[i] = '1';
+                        carry = 0;
+                        break;
+                }
+            }
+            cout<<a<<endl;
+            cout<<b<<endl;
+
+            if(a[n-1]=='0') a.resize(n-1);
+            reverse(a.begin(),a.end());
+            return a;
+        }
+};
+
+int main(){
+    Solution s;
+    string a = "11", b="1";
+    cout<<"Resultant sum is : "<<s.addBinary(a,b)<<endl;
+    return 0;
+}

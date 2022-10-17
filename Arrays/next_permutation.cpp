@@ -39,10 +39,30 @@ void next_optimal(vector<int> &v, int n)
   cout << endl;
 }
 
+void nextPermutation(vector<int> &nums){
+  int n = nums.size();
+  int flag=0;
+  for(int i=n-1;i>=0;i--){
+    for(int j=i+1;j<=n;j++){
+      if(nums[j]>nums[i]){
+        int temp = nums[j];
+        nums[j] = nums[i];
+        nums[i] = temp;
+        return;
+      }
+    }
+    if(flag==0) sort(nums.begin()+i,nums.end());
+  }
+  return;
+}
+
 int main()
 {
-  vector<int> v{1, 3, 5, 4, 2};
-  int n = v.size();
-  next_optimal(v, n);
+  //vector<int> v{1, 3, 5, 4, 2};
+  vector<int> v1 = {1,2,3,6,5,4};
+
+  //int n = v.size();
+  //next_optimal(v, n);
+  nextPermutation(v1);
   return 0;
 }
